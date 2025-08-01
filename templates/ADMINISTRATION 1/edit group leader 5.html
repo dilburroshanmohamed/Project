@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/Myapp/editgroupleader_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+  <p>&nbsp;</p>
+  <table width="275" border="1">
+    <tr>
+        <input type="hidden" name="id" value="{{ data.id }}">
+      <td width="45">Name</td>
+      <td width="218"><input type="text" name="textfield" value="{{ data.name}}"id="textfield" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td><table width="221">
+        <tr>
+          <td width="213"><label>
+            <input type="radio" name="RadioGroup1" value="Male" {% if data.gender == 'Male' %}checked{% endif %} id="RadioGroup1_0" />
+            Male</label></td>
+        </tr>
+        <tr>
+          <td><label>
+            <input type="radio" name="RadioGroup1" value="Female"{% if data.gender == 'Female' %}checked{% endif %}  id="RadioGroup1_1" />
+            Female</label></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr>
+     <td>Course</td>
+      <td>
+        <input type="text" name="textfield2" value="{{ data.course}}" id="textfield2" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield3" value="{{ data.email}}" id="textfield3" class="form-control"/></td>
+    </tr>
+      <tr>
+      <td>GROUP</td>
+      <td>
+        <select name="select2" id="select2">
+            {% for i in data2 %}
+                <option hidden value="{{ data.GROUP.id }}">{{ data.GROUP.groupname }}</option>
+            <option value="{{ i.id }}">{{ i.groupname }}</option>
+            {% endfor %}
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Phone number</td>
+      <td><input type="text" name="textfield4" value="{{ data.phoneno}}" id="textfield4" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Edit" id="Edit" value="Edit" />
+      </div></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+</body>
+</html>

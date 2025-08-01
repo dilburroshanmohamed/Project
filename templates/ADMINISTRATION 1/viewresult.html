@@ -1,0 +1,29 @@
+{% extends "adminhomeindex.html" %}
+
+{% block body %}
+  <form id="form1" name="form1" method="post" action="/Myapp/views.pyresult_post/">
+    {% csrf_token %}
+
+    <table class="table table-bordered table-hover mb-3 mt-3">
+      <thead>
+        <tr>
+          <th>Sl. No</th>
+          <th>Candidate Name</th>
+          <th>Average Mark</th>
+          <th>Grade</th> <!-- Add a new column for Grade -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in data %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.average_mark }}</td>
+          <td>{{ item.grade }}</td> <!-- Display the grade corresponding to the average mark -->
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <p>&nbsp;</p>
+  </form>
+{% endblock %}

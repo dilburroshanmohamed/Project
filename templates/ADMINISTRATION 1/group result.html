@@ -1,0 +1,30 @@
+{% extends "adminhomeindex.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/Myapp/result_post/">
+    {% csrf_token %}
+   <table class="pull-left mb-3 mt-3">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+      <td><input type="submit" name="Search" id="Search" value="Search" class="btn btn-info" /></td>
+    </tr>
+  </table>
+
+   <table  class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+      <td width="43">position</td>
+      <td width="43">group</td>
+      <td width="103">point</td>
+    </tr>
+               {% for i in data %}
+
+    <tr>
+      <td width="43">{{ forloop.counter }}</td>
+      <td>{{ i.g.groupname }}</td>
+      <td width="103">{{i.score  }}</td>
+    </tr>
+       {% endfor %}
+
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

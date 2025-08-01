@@ -1,0 +1,43 @@
+{% extends "adminhomeindex.html" %}
+{% block body %}
+<form action="/Myapp/viewcandidate_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+   <table class="pull-left mb-3 mt-3">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+      <td><input type="submit" name="Search" class="btn btn-info" id="Search" value="Search" /></td>
+    </tr>
+  </table>
+   <table class="table table-hover table-bordered">
+    <tr>
+{#      <th>Slno</th>#}
+{#      <th>Name</th>#}
+{#      <th>Gender</th>#}
+{#      <th>Course</th>#}
+{#      <th>Email</th>#}
+{#      <th>Phone number</th>#}
+{#      <th>PROGRAM</th>#}
+{#        <th>group</th>#}
+        <th>chess number</th>
+{#        <td></td>#}
+{#        <td></td>#}
+    </tr>
+
+      {% for i in data %}
+      <tr>
+{#      <td>{{  forloop.counter }}</td>#}
+{#      <td>{{ i.name }}</td>#}
+{#      <td>{{ i.gender }}</td>#}
+{#      <td>&nbsp;{{ i.course }}</td>#}
+{#      <td>&nbsp;{{ i.email }}</td>#}
+{#      <td>&nbsp;{{ i.phoneno }}</td>#}
+{#      <td>{{ i.PROGRAM.programname }}</td>#}
+{#      <td>{{i.GROUP.groupname}}</td>#}
+      <td>ABC-{{i.id}}00</td>
+{#      <td><a href="/Myapp/delete_candiprogram/{{ i.id }}"onclick="return confirm('are you sure')"class="btn btn-danger">Delete</a></td>#}
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

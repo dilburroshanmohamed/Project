@@ -1,0 +1,39 @@
+
+{% extends "adminhomeindex.html" %}
+{% block body %}
+
+<form action="/Myapp/addprogram_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+
+  <table class="table table-bordered table-hover mb-3 mt-3">>
+    <tr>
+      <td>Program name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield"  class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Program type</td>
+      <td> <input type="text" name="textfield2" id="textfield2" class="form-control" />
+      </td>
+
+    </tr>
+    <tr>
+      <td>IS Group item</td>
+      <td><label for="textfield3"></label>
+          <input type="text" name="textfield3" id="textfield3" class="form-control" />
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Add" id="Add" class="btn btn-info"value="Add" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+

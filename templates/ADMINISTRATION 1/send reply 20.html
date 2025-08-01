@@ -1,0 +1,20 @@
+
+{ {% extends "adminhomeindex.html" %} }
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/Myapp/sendreply_post/">
+    {% csrf_token %}
+  <table class="table table-broder">
+    <tr>
+        <input type="hidden" name="cid" value="{{ id }}">
+        <th>REPLAY</th>
+      <td height="64"><textarea name="textarea" id="textarea" cols="45" rows="5"class="form-control"></textarea></td>
+    </tr>
+    <tr>
+      <td><div align="right">
+        <input type="submit" name="Reply" id="Reply" value="Reply" class="btn btn-info"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

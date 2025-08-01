@@ -1,0 +1,18 @@
+{% extends "adminhomeindex.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/Myapp/groupadd_post/">
+    {% csrf_token %}
+  <table class="table table-bordered">
+    <tr>
+      <td>Group name</td>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Add" id="Add" value="Add"  class="btn btn-success"/>
+      </div></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}
