@@ -1,0 +1,39 @@
+{% extends 'PUBLIC 5/publicindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/Myapp/public_viewprogramshedule_post/">
+{% csrf_token %}
+
+    <tr>
+      <td>search program </td>
+      <td>from</td>
+      <td><label for="textfield"></label>
+      <input type="date" name="textfield" id="textfield" /></td>
+      <td>to</td>
+      <td><label for="textfield2"></label>
+      <input type="date" name="textfield2" id="textfield2"class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="search" class="btn btn-success" /></td>
+    </tr>
+  <table  class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+      <td>SLNO</td>
+      <td>program</td>
+      <td>date</td>
+      <td>from time</td>
+      <td>to time</td>
+      <td>stage</td>
+    </tr>
+     {% for i in data %}
+  <tr>
+       <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.PROGRAM }}</td>
+      <td>{{ i.date }}</td>
+      <td>&nbsp;{{ i.fromtime }}</td>
+      <td>&nbsp;{{ i.totime }}</td>
+      <td>&nbsp;{{ i.stage }}</td>
+    </tr>
+      {% endfor %}
+  </tr>
+  </table>
+</form>
+{% endblock %}
