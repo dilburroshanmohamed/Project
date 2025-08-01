@@ -1,0 +1,31 @@
+
+{% extends 'JUDGES 3/judgeindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+      <th width="92">SINO</th>
+      <th width="96">Program</th>
+      <th width="63">Date</th>
+      <th width="76">From time</th>
+      <th width="88">To time </th>
+      <th width="129">Stage</th>
+      <th>students</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.PROGRAMME.programname }}</td>
+      <td>&nbsp;{{  i.PROGRAMESHEDULE.date}}</td>
+      <td>{{ i.PROGRAMESHEDULE.fromtime }}</td>
+      <td>&nbsp;{{  i.PROGRAMESHEDULE.totime}}</td>
+      <td>{{ i.PROGRAMESHEDULE.stage }}</td>
+        <td><a href="/Myapp/viewparticipants/{{ i.PROGRAMME.id }}"class="btn btn-success">view</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>{% endblock %}
+
+

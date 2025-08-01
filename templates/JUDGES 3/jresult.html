@@ -1,0 +1,44 @@
+{% extends 'JUDGES 3/judgeindex.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/Myapp/jresult_post/">
+    {% csrf_token %}
+   <table class="pull-left mb-3 mt-3">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" /></td>
+      <td><input type="submit" name="Search" id="Search" value="Search" class="btn btn-info" /></td>
+    </tr>
+  </table>
+
+   <table  class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+      <td width="43">position</td>
+      <td width="43">chess number</td>
+      <td width="103">Candidate name</td>
+      <td width="81">group</td>
+        <td width="104">grade</td>
+    </tr>
+      {% for i in data %}
+
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>ABC-{{ i.id }}00</td>
+        <td>{{ i.s }}</td>
+        <td>{{ i.GROUP }}</td>
+{#      <td>{{ i. }}</td>#}
+        <td>{% if i.mark >= 27 %}A{% elif i.mark >= 24  %}B{{ i.grade}}{% endif %}</td>
+    </tr>
+{#          <tr>#}
+{#        <td>{{ forloop.counter }}</td>#}
+{#        <td>ABC-{{ i.CANDIDATE.id }}00</td>#}
+{#        <td>{{ i.CANDIDATE.name }}</td>#}
+{#        <td>{{ i.CANDIDATE.GROUP.groupname }}</td>#}
+{#      <td>{{ i. }}</td>#}
+{#        <td>{{ i.grade}}</td>#}
+{#    </tr>#}
+      {% endfor %}
+             <tr><td></td><td>{{ mark }}</td></tr>
+
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}
