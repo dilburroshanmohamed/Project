@@ -1,0 +1,43 @@
+
+{% extends 'CANDIDATE 4/candidate index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+      <td width="177">&nbsp;</td>
+      <td width="67">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>&nbsp;{{ data.name }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>&nbsp;{{ data.gender }}</td>
+    </tr>
+    <tr>
+      <td>course</td>
+      <td>{{ data.course }}</td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+      <td>&nbsp;{{data.phoneno}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>&nbsp;{{data.email}}</td>
+    </tr>
+    <tr>
+      <td>program</td>
+      <td>&nbsp;{{data.PROGRAM.programname }}</td>
+    </tr>
+      <tr>
+      <td>group</td>
+      <td>&nbsp;{{ data.GROUP.groupname }}</td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

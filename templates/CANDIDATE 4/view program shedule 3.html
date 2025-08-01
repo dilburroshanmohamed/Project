@@ -1,0 +1,30 @@
+
+{% extends 'CANDIDATE 4/candidate index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered table-hover mb-3 mt-3">
+    <tr>
+        <td>SI no</td>
+      <td >Program</td>
+      <td >Date</td>
+      <td >From time</td>
+      <td >To time </td>
+      <td >Stage</td>
+    </tr>
+      {% for i in data %}
+
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.PROGRAM.programname }}</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>&nbsp;{{ i.fromtime }}</td>
+      <td>&nbsp;{{ i.totime }}</td>
+        <td>&nbsp;{{ i.stage }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}
+
