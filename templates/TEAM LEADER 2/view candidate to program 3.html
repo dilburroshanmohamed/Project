@@ -1,0 +1,45 @@
+{% extends 'TEAM LEADER 2/leader index.html' %}
+{% block body %}
+<form action="/Myapp/viewgroupleader_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    {% csrf_token %}
+   <table class="pull-left mb-3 mt-3">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+      <td><input type="submit" name="Search" class="btn btn-info" id="Search" value="Search" /></td>
+    </tr>
+  </table>
+   <table class="table table-hover table-bordered">
+    <tr>
+      <td>Slno</td>
+      <td>Name</td>
+      <td>Gender</td>
+      <td>Course</td>
+      <td>Email</td>
+      <td>Phone number</td>
+      <td>PROGRAM</td>
+        <td>group</td>
+        <th>chess number</th>
+        <td></td>
+        <td></td>
+    </tr>
+
+      {% for i in data %}
+      <tr>
+      <td>{{  forloop.counter }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.gender }}</td>
+      <td>&nbsp;{{ i.course }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>&nbsp;{{ i.phoneno }}</td>
+      <td>{{ i.PROGRAM.programname }}</td>
+      <td>{{i.GROUP.groupname}}</td>
+      <td>      <td>ABC-{{i.id}}00</td>
+
+          <td><a href="/Myapp/Editcandidateprogram/{{ i.id }}"class="btn btn-success">Edit</a></td>
+      <td><a href="/Myapp/delete_candiprogram/{{ i.id }}"onclick="return confirm('are you sure')"class="btn btn-danger">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

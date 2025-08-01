@@ -1,0 +1,35 @@
+{% extends 'TEAM LEADER 2/leader index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="260" border="1">
+    <tr>
+      <td width="177">&nbsp;</td>
+      <td width="67">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>&nbsp;{{ data.name }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>&nbsp;{{ data.gender }}</td>
+    </tr>
+    <tr>
+      <td>Course</td>
+      <td>{{ data.course }}</td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+      <td>&nbsp;{{data.phoneno}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>&nbsp;{{data.email}}</td>
+    </tr>
+    <tr>
+      <td>Group name</td>
+      <td>&nbsp;{{ data.GROUP.groupname }}</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

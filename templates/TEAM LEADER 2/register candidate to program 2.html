@@ -1,0 +1,61 @@
+{% extends 'TEAM LEADER 2/leader index.html' %}
+{% block body %}}
+<form action="/Myapp/registercandidate_post/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+{% csrf_token %}
+  <table class="table table-hover table-bordered">
+    <tr>
+      <td width="48">Name</td>
+      <td width="220"><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+        <td>
+            <select class="form-control" name="RadioGroup1">
+            <option>male</option>
+            <option>female</option>
+            <option>other</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+      <td>Course</td>
+      <td><div>
+        <input type="text" name="textfield2" id="textfield2"class="form-control" />
+      </div></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield3" id="textfield3" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Phone number</td>
+      <td><input type="text" name="textfield4" id="textfield4" class="form-control" /></td>
+    </tr>
+  <tr>
+      <td>program</td>
+      <td><select name="select3" id="select3"class="form-control">
+            {% for j in data1 %}
+            <option value="{{ j.id }}">{{ j.programname }}</option>
+            {% endfor %}
+        </select></td>
+    </tr>
+    <tr>
+      <td>GROUP</td>
+      <td>
+        <select name="select2" id="select2" class="form-control">
+            {% for i in data %}
+            <option value="{{ i.id }}">{{ i.groupname }}</option>
+            {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" id="Submit" value="Submit"class="btn badge-info" />
+      </div></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}
+

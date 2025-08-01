@@ -1,0 +1,32 @@
+{% extends 'TEAM LEADER 2/leader index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="pull-left">
+    <tr>
+      <td ><input type="text" name="" class="form-control"></td>
+      <td><input type="submit" name="button" id="button" class="btn btn-info" value="Search" /></td>
+    </tr>
+  </table>
+<br>
+<br>
+  <table class="table table-bordered">
+    <tr>
+      <th width="68" height="32">Slno</th>
+      <th width="109">Program name</th>
+      <th width="83">Program type</th>
+      <th width="292">Is group program</th>
+      <th width="226">Description</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{  forloop.counter }}</td>
+  <td>{{ i.programname }}</td>
+      <td>{{ i.programtype}}</td>
+      <td>&nbsp;{{ i.groupprogram }}</td>
+      <td>{{ i.description }}</td>
+    </tr>
+       {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

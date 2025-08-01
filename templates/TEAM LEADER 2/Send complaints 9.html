@@ -1,0 +1,21 @@
+{% extends 'TEAM LEADER 2/leader index.html' %}
+{% block body %}
+    <div class="container">
+   <center> <div class="col-6"><form id="form1" name="form1" method="post" action="/Myapp/lsendcomplaint_post/">
+    {% csrf_token %}
+  <table class="table table-bordered">
+    <tr>
+        <th><center>complaints</center></th>
+      <td ><label for="textarea"></label>
+        <textarea name="textarea" id="textarea" cols="45" class="form-control" rows="5"></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="button" id="button" class=" btn btn-success" value="Send" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</div></center>
+    </div>
+{% endblock %}
